@@ -1,0 +1,96 @@
+{%extends 'layoutVeterinario.html'%}
+
+
+
+{% block body%}
+
+<div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+
+<div class="container ">
+
+    <div class="card m-3">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-sm-6">
+                    Mascotas a antender
+                </div>
+            </div>
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-head-fixed text-nowrap">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha ingreso</th>
+                        <th>Estado</th>
+                        <th>Cliente</th>
+                        <th>Tipo animal</th>
+                        <th>Raza</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Chip</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% if items|length > 0%}
+                    {% for item in items %}
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.ingreso}}</td>
+                        <td class="{{item.td_class}}">{{item.estado}}</td>
+                        <td>{{item.cli_rut}}</td>
+                        <td>{{item.tipo}}</td>
+                        <td>{{item.raza}}</td>
+                        <td>{{item.a_nombre}}</td>
+                        <td>{{item.edad}}</td>
+                        <td>{{item.chip}}</td>
+                        <td>{{item.descripcion}}</td>
+
+                        
+                        {% if item.estado_animal_id == 1 or item.estado_animal_id == 2 %}
+                        <td>    
+                        <button  class="btn btn-success show1" id_animal="{{item.id}}"><i class="fa-solid fa-eye"></i> Ver</button>
+                        <div class="btn-group" role="group">
+                                <a href="/atenciones/atender/{{item.id}}" class="btn btn-success action" action="¿Usted está seguro de editar?"><i class="fa-solid fa-stethoscope"></i>Atender</a>
+                                <a href="/mascotas/eliminar/{{item.id}}" class="btn btn-danger action" action="¿Usted está seguro de eliminar?"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                            </div>
+                        </td>    
+                        {% else %}
+                        <td>
+                            <button  class="btn btn-success show1" id_animal="{{item.id}}"><i class="fa-solid fa-eye"></i> Ver</button>
+                            <div class="btn-group" role="group">
+                                <a href="/atenciones/atender/{{item.id}}" class="btn btn-success action" action="¿Usted está seguro de editar?"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                                <a href="/mascotas/eliminar/{{item.id}}" class="btn btn-danger action" action="¿Usted está seguro de eliminar?"><i class="fa-solid fa-trash"></i>Eliminar</a>
+                        </div>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr style="text-align: center;">
+                        <td colspan="10">No existen datos ingresados.</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

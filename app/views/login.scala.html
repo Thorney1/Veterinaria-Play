@@ -1,25 +1,44 @@
-@()
-
-@main("Login - Veterinaria") {
-<div class="container">
-    <h3 style="aling-center">Veterinaria Sol</h3> <!-- SOL <--- NOMBRE PROVISORIO-->
+{%extends 'layoutlogin.html'%}
 
 
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    }
-</div>
+
+{% block body%}
+
+<form method="post">
+    <div class="container" style="text-align: center;">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </div>
+    <div class="rut_log">
+        <label for="form-label">Rut</label>
+        <input type="text" name="rut" id="rut_id" maxlength="10" class="form-control">
+    </div>
+    <div class="password-log">
+        <label for="form-label">Password</label>
+        <input type="password" name="pass" id="pass_id" class="form-control">
+    </div>
+    <div class="cheackbox_log">
+        <input type="checkbox" class="#">
+        <label for="form-label">Recordar (opcional)</label>
+    </div>
+
+    {% if error %}
+    <div class="text-center text-danger">
+        <strong> {{ error }}</strong>
+    </div>
+    {% endif %}
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </div>
+    <div class="container">
+        <a href="#">¿Olvidó su contraseña?</a>
+    </div>
+
+</form>
+
+
+
+
+{% endblock %}
