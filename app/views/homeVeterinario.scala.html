@@ -1,10 +1,10 @@
 @main("Home"){
-@layoutLogin()
+@layoutVeterinario()
 <body class="body-color">
 
     <h1 id="my-text" onclick="showAlert()">Hola, Dr. Daniel Sepulveda.</h1>
 
-    <img src="{{url_for('static', filename = 'img/Perro_doc.png')}}" alt="">
+    <img src="@routes.Assets.versioned("images/Perrodoc.png")" alt="">
 
 </body>
 }

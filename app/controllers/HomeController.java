@@ -25,9 +25,6 @@ public class HomeController extends Controller {
     public Result listForm(Http.Request request){
         return ok(views.html.form.render(form, request, messagesApi.preferred(request)));
     }
-    public Result login() {
-        return ok(views.html.login.render());
-    }
   
     public Result home() {
 

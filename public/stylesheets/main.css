@@ -1,31 +1,31 @@
-.color1 { #da2625 };
-.color2 { #f4caa9 };
-.color3 { #933816 };
-.color4 { #51b38e };
-.color5 { #ddd5c6 };
+.color1 { color: #da2625; }
+.color2 { color: #f4caa9; }
+.color3 { color: #933816; }
+.color4 { color: #51b38e; }
+.color5 { color: #ddd5c6; }
 
-
-#titulo_login{
+#titulo_login {
     color: black;
 }
-#boton-login{
-    background:white;
+
+#boton-login {
+    background: white;
 }
 
-#boton-login:active:focus{
-    background-color:#53bfcb;
-
-}
-#boton-login:hover{
-    background-color:#8ee4e8;
+#boton-login:active:focus {
+    background-color: #53bfcb;
 }
 
-#card{
-    background-color:#f4caa9;
-
+#boton-login:hover {
+    background-color: #8ee4e8;
 }
-.body-color{
-    background-color:#ddd5c6;
+
+#card {
+    background-color: #f4caa9;
+}
+
+.body-color {
+    background-color: #ddd5c6;
 }
 
 #contenedor-login {
@@ -36,6 +36,12 @@
 }
 
 .center-form {
-    width: 600px; /* Opcional: ajusta el ancho según tus necesidades */
+    max-width: 600px; /* Opcional: ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
 }
 
+.imagen-responsiva {
+  max-width: 100%;
+  height: auto;
+}
