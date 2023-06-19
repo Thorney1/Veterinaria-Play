@@ -1,37 +1,36 @@
+@main("Mascotas"){
 @layoutLogin()
+<body class="body-color">
 
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
 
+    <div class="container ">
 
-
-<div class="container">
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    {{ message }}
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
-</div>
-
-<div class="container ">
-
-    <div class="card m-3">
-        <div class="card-header">
-            <div class="row">
-                <div class="col-sm-6">
-                    Todas las mascotas ingresadas
+        <div class="card m-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-6">
+                        Todas las mascotas ingresadas
+                    </div>
+                    <div class="col-sm-6" style="text-align: right;">
+                        <a class="btn btn-primary" href="/mascotas/crear">Ingresar mascota</a>
+                    </div>
                 </div>
-                <div class="col-sm-6" style="text-align: right;">
-                    <a class="btn btn-primary" href="/mascotas/crear">Ingresar mascota</a>
-                </div>
+
+                <!-- de 12 columnas asignamos el uso de 4 -->
+
             </div>
-
-            <!-- de 12 columnas asignamos el uso de 4 -->
-
-        </div>
-        <div class="card-body table-responsive p-0">
-            <table class="table table-head-fixed text-nowrap">
-                <thead>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
                     <tr>
                         <th>#</th>
                         <th>Fecha ingreso</th>
@@ -45,8 +44,8 @@
                         <th>Descripción</th>
                         <th>Acciones</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
 
                     {% if items|length > 0%}
                     {% for item in items %}
@@ -83,19 +82,21 @@
                         <td colspan="10">No existen datos ingresados.</td>
                     </tr>
                     {% endif %}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+
+
     </div>
 
 
 
-</div>
+    {% block custom_js %}
 
+    <script src="{{url_for('static', filename='js/crud/mascotas.js')}}"></script>
 
-
-{% block custom_js %}
-
-<script src="{{url_for('static', filename='js/crud/mascotas.js')}}"></script>
-
-{% endblock %}
+    {% endblock %}
+</body>
+}

@@ -64,13 +64,13 @@ public class HomeController extends Controller {
 
     
     public Result createUser(Http.Request request){
-        String name = request.body().asFormUrlEncoded().get("name")[0];
-        String email = request.body().asFormUrlEncoded().get("email")[0];
+        String rut = request.body().asFormUrlEncoded().get("rut")[0];
+        String password = request.body().asFormUrlEncoded().get("password")[0];
 
         User user = new User();
 
-        user.name = name;
-        user.email = email;
+        user.rut = rut;
+        user.password = password;
 
 
 

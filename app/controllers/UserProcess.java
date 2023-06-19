@@ -3,27 +3,27 @@ package controllers;
 import play.data.validation.Constraints;
 
 public class UserProcess {
-    @Constraints.Required protected String name;
-    protected String email;
+    @Constraints.Required protected String rut;
+    protected String password;
 
     public UserProcess(){
 
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
-    public String getName() {
-        return name;
+    public String getRut() {
+        return rut;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
 }

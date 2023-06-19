@@ -24,8 +24,11 @@
     background-color:#f4caa9;
 
 }
+.body-color{
+    background-color:#ddd5c6;
+}
 
-.container {
+#contenedor-login {
     display: flex;
     justify-content: center;
     align-items: center;

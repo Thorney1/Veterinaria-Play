@@ -2,29 +2,31 @@
 @(form: Form[UserProcess])(implicit request: Request, messages: play.i18n.Messages)
 
 @main("Formulario"){
+<body class="body-color">
+    <div class="container" id="contenedor-login">
+        <div class="card text-center" id="card">
+            <div class="p-4">
 
-<div class="container">
-    <div class="card text-center" id="card">
-        <div class="p-4">
+                <h1 id="titulo_login">Inicio de Sesión</h1>
+                <hr>
 
-            <h1 id="titulo_login">Inicio de Sesión</h1>
-            <hr>
-
-            <form action="@routes.HomeController.createUser" method="post" class="center-form">
-                @helper.CSRF.formField
-                <div class="mb-3">
-                    <!-- <label for="name" class="form-label" placeholder="Nombre"></label> -->
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
-                </div>
-                <div class="mb-3">
-                    <!-- <label for="email" class="form-label" placeholder="Correo"></label> -->
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo">
-                    <div class="form-text">Nunca compartiremos tu correo electrónico con nadie.❤️</div>
-                </div>
-                <button id="boton-login" type="submit" class="btn btn-personal">Ingresar</button>
-            </form>
+                <form action="@routes.HomeController.createUser" method="post" class="center-form">
+                    @helper.CSRF.formField
+                    <div class="mb-3">
+                        <!-- <label for="name" class="form-label" placeholder="Nombre"></label> -->
+                        <input type="text" class="form-control" id="rut" name="rut" placeholder="RUT">
+                    </div>
+                    <div class="mb-3">
+                        <!-- <label for="email" class="form-label" placeholder="Correo"></label> -->
+                        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Contraseña">
+                        <div class="form-text">Nunca compartiremos tu correo electrónico con nadie.❤️</div>
+                    </div>
+                    <button id="boton-login" type="submit" class="btn btn-personal">Ingresar</button>
+                </form>
+            </div>
         </div>
+        <img  src="@routes.Assets.versioned("images/Gatita.png")" alt="gatita png" width="596" height="326">
     </div>
-    <img  src="@routes.Assets.versioned("images/Gatita.png")" alt="gatita png" width="596" height="326">
-</div>
+</body>
+
 }
