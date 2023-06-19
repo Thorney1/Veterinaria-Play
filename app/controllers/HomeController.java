@@ -20,9 +20,7 @@ public class HomeController extends Controller {
         this.form = formFactory.form(UserProcess.class);
         this.messagesApi = messagesApi;
     }
-    public Result index() {
-        return ok(views.html.index.render());
-    }
+
 
     public Result listForm(Http.Request request){
         return ok(views.html.form.render(form, request, messagesApi.preferred(request)));
@@ -76,7 +74,7 @@ public class HomeController extends Controller {
 
 
 
-        return redirect(routes.HomeController.index());
+        return redirect(routes.HomeController.home());
     }
 
 }

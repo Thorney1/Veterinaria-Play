@@ -1,8 +1,7 @@
-{%extends 'layout.html'%}
+@layoutLogin()
 
 
 
-{% block body%}
 
 <div class="container">
     {% with messages = get_flashed_messages() %}
@@ -93,9 +92,6 @@
 
 </div>
 
-
-
-{% endblock %}
 
 
 {% block custom_js %}

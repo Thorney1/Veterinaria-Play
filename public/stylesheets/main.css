@@ -1,0 +1,38 @@
+.color1 { #da2625 };
+.color2 { #f4caa9 };
+.color3 { #933816 };
+.color4 { #51b38e };
+.color5 { #ddd5c6 };
+
+
+#titulo_login{
+    color: black;
+}
+#boton-login{
+    background:white;
+}
+
+#boton-login:active:focus{
+    background-color:#53bfcb;
+
+}
+#boton-login:hover{
+    background-color:#8ee4e8;
+}
+
+#card{
+    background-color:#f4caa9;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Opcional: ajusta la altura según tus necesidades */
+}
+
+.center-form {
+    width: 600px; /* Opcional: ajusta el ancho según tus necesidades */
+}
+

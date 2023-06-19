@@ -2,12 +2,29 @@
 @(form: Form[UserProcess])(implicit request: Request, messages: play.i18n.Messages)
 
 @main("Formulario"){
-<h1>Formulario</h1>
 
-@helper.form(routes.HomeController.createUser){
-@helper.CSRF.formField
-@helper.inputText(form("name"))
-@helper.inputText(form("email"))
-<button type="submit">Ingresar</button>
-}
+<div class="container">
+    <div class="card text-center" id="card">
+        <div class="p-4">
+
+            <h1 id="titulo_login">Inicio de Sesión</h1>
+            <hr>
+
+            <form action="@routes.HomeController.createUser" method="post" class="center-form">
+                @helper.CSRF.formField
+                <div class="mb-3">
+                    <!-- <label for="name" class="form-label" placeholder="Nombre"></label> -->
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="email" class="form-label" placeholder="Correo"></label> -->
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo">
+                    <div class="form-text">Nunca compartiremos tu correo electrónico con nadie.❤️</div>
+                </div>
+                <button id="boton-login" type="submit" class="btn btn-personal">Ingresar</button>
+            </form>
+        </div>
+    </div>
+    <img  src="@routes.Assets.versioned("images/Gatita.png")" alt="gatita png" width="596" height="326">
+</div>
 }

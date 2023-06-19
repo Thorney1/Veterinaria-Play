@@ -4,8 +4,8 @@
 
 # An example controller showing a sample home page
 
-GET     /home                           controllers.HomeController.index()
-GET     /                           controllers.HomeController.login()
+
+
 GET     /home                       controllers.HomeController.home()
 GET     /homeVet                    controllers.HomeController.homeVeterinario()
 GET     /error                      controllers.HomeController.error()
@@ -16,10 +16,10 @@ GET     /mascotas/crear             controllers.HomeController.mascotasCrear()
 GET     /register                   controllers.HomeController.register()
 
 
-# controladores - formulario
+# controladores - formulario de Ingreso
 
 
-GET     /form                       controllers.HomeController.listForm(request: Request)
+GET     /                           controllers.HomeController.listForm(request: Request)
 POST    /submit                     controllers.HomeController.createUser(request: Request)
 
 # Map static resources from the /public folder to the /assets URL path
