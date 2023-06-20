@@ -1,7 +1,7 @@
 @import play.mvc.Http.Request
 @(form: Form[UserProcess])(implicit request: Request, messages: play.i18n.Messages)
 
-@main("Formulario"){
+@mainLogin("Formulario"){
 <body class="body-color">
     <div class="container" id="contenedor-login">
         <div class="card text-center" id="card">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="p-4">
-        <img src="@routes.Assets.versioned("images/Gatita.png")" alt="gatita png" class="imagen-responsiva">
+        <img src='@routes.Assets.versioned("images/Gatita.png")' alt="gatita png" class="imagen-responsiva">
         </div>
     </div>
 </body>
