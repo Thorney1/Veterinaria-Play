@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Veterinaria.iml" filepath="$PROJECT_DIR$/.idea/modules/Veterinaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Veterinaria-Play.Veterinaria.iml" filepath="$PROJECT_DIR$/.idea/modules/Veterinaria-Play.Veterinaria.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Veterinaria-build.iml" filepath="$PROJECT_DIR$/.idea/modules/Veterinaria-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project.Veterinaria-build.iml" filepath="$PROJECT_DIR$/.idea/modules/project.Veterinaria-build.iml" />
     </modules>
   </component>
 </project>
