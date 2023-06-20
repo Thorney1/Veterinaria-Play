@@ -1,5 +1,4 @@
 @main("atenciones"){
-@layoutLogin()
 
 
 <body class="body-color">
@@ -110,7 +109,7 @@
 
     {% block custom_js%}
 
-    <script src="{{url_for('static', filename='js/crud/atender.js')}}"></script>
+    <script src='@routes.Assets.versioned("javascripts/crud/atender.js")'></script>
 
     {% endblock %}
 
