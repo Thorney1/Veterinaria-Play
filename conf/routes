@@ -20,7 +20,7 @@ GET     /register                   controllers.HomeController.register()
 
 
 GET     /                           controllers.HomeController.listForm(request: Request)
-POST    /submit                     controllers.HomeController.createUser(request: Request)
+POST    /                           controllers.HomeController.processLogin(request: Request)
 
 # Map static resources from the /public folder to the /assets URL path
 

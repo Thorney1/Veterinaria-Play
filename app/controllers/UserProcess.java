@@ -4,7 +4,8 @@ import play.data.validation.Constraints;
 
 public class UserProcess {
     @Constraints.Required protected String rut;
-    protected String password;
+    protected String pass;
+    protected int tipo_usuario;
 
     public UserProcess(){
 
@@ -13,17 +14,28 @@ public class UserProcess {
     public void setRut(String rut) {
         this.rut = rut;
     }
-
     public String getRut() {
         return rut;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+    public String getPass() {
+        return pass;
     }
 
-    public String getPassword() {
-        return password;
+
+
+    public void setTipoUsuario(int tipo_usuario) {
+        this.tipo_usuario = tipo_usuario;
     }
+
+    public int getTipoUsuario() {
+        return tipo_usuario;
+    }
+
+
 
 }

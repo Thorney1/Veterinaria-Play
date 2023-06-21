@@ -10,7 +10,7 @@
                 <h1 id="titulo_login">Inicio de Sesión</h1>
                 <hr>
 
-                <form action="@routes.HomeController.createUser" method="post" class="center-form">
+                <form action="@routes.HomeController.processLogin" method="post" class="center-form">
                     @helper.CSRF.formField
                     <div class="mb-3">
                         <!-- <label for="name" class="form-label" placeholder="Nombre"></label> -->
@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <!-- <label for="email" class="form-label" placeholder="Correo"></label> -->
-                        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
                         <div class="form-text">Nunca compartiremos tu correo electrónico con nadie.❤️</div>
                     </div>
                     <button id="boton-login" type="submit" class="btn btn-personal">Ingresar</button>
