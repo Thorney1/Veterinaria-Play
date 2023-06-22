@@ -55,15 +55,16 @@ public class HomeController extends Controller {
         return ok(views.html.register.render());
     }
 
-
-
-
     public Result listForm(Http.Request request){
         Form<UserProcess> form = formFactory.form(UserProcess.class);
         return ok(views.html.form.render(form, request, messagesApi.preferred(request)));
     }
     public Result processLogin(Http.Request request) {
         Form<UserProcess> form = formFactory.form(UserProcess.class).bindFromRequest(request);
+        if (form.hasErrors()) {
+            return redirect(routes.HomeController.listForm());
+        }
+
         UserProcess user = form.get();
 
         boolean verify = verify(user.getRut(), user.getPass());
@@ -78,7 +79,6 @@ public class HomeController extends Controller {
             } else if (tipoUsuario == 0) {
                 // Redirigir a una página específica para tipo_usuario 0
                 return redirect(routes.HomeController.home()).addingToSession(request, "connected", user.getRut());
-
             } else {
                 // Redirigir a una página de error en caso de valor de tipo_usuario inválido
                 return redirect(routes.HomeController.error());
@@ -88,6 +88,7 @@ public class HomeController extends Controller {
             return redirect(routes.HomeController.listForm());
         }
     }
+
     public Result cerrarsesion(Http.Request request){
         return redirect(routes.HomeController.listForm()).removingFromSession(request, "connected");
 

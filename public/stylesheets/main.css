@@ -41,6 +41,13 @@
     padding: 20px;
 }
 
+#contenedor {
+    display: flex;
+    max-width: 80%; /* Opcional: ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .imagen-responsiva {
   max-width: 100%;
   height: auto;

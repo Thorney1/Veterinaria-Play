@@ -3,7 +3,11 @@ package controllers;
 import play.data.validation.Constraints;
 
 public class UserProcess {
-    @Constraints.Required protected String rut;
+
+    @Constraints.Required(message = "El rut es requerido.")
+    protected String rut;
+
+    @Constraints.Required(message = "La contraseña es requerida.")
     protected String pass;
     protected int tipo_usuario;
 
