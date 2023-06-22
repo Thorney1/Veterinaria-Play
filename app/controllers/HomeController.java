@@ -74,10 +74,11 @@ public class HomeController extends Controller {
             System.out.println(tipoUsuario);
             if (tipoUsuario == 1) {
                 // Redirigir a una página específica para tipo_usuario 1
-                return redirect(routes.HomeController.homeVeterinario());
+                return redirect(routes.HomeController.homeVeterinario()).addingToSession(request, "connected", user.getRut());
             } else if (tipoUsuario == 0) {
                 // Redirigir a una página específica para tipo_usuario 0
-                return redirect(routes.HomeController.home());
+                return redirect(routes.HomeController.home()).addingToSession(request, "connected", user.getRut());
+
             } else {
                 // Redirigir a una página de error en caso de valor de tipo_usuario inválido
                 return redirect(routes.HomeController.error());
@@ -87,7 +88,10 @@ public class HomeController extends Controller {
             return redirect(routes.HomeController.listForm());
         }
     }
+    public Result cerrarsesion(Http.Request request){
+        return redirect(routes.HomeController.listForm()).removingFromSession(request, "connected");
 
+    }
     private boolean verify(String rut, String pass) {
         User user = User.find.query().where()
                 .eq("rut", rut)
