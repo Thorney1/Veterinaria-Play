@@ -19,36 +19,34 @@
             <div class="card-body table-responsive p-0" display >
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Fecha ingreso</th>
-                        <th>Estado</th>
-                        <th>Cliente</th>
-                        <th>Tipo animal</th>
-                        <th>Raza</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>Chip</th>
-                        <th>Descripción</th>
-                        <th>Acciones</th>
+                    <tr class="th">
+                        <th class="th">#</th>
+                        <th class="th">Fecha ingreso</th>
+                        <th class="th">Estado</th>
+                        <th class="th">Cliente</th>
+                        <th class="th">Tipo animal</th>
+                        <th class="th">Raza</th>
+                        <th class="th">Nombre</th>
+                        <th class="th">Edad</th>
+                        <th class="th">Chip</th>
+                        <th class="th">Descripción</th>
+                        <th class="th">Acciones</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>{{item.id}}</td>
-                        <td>{{item.ingreso}}</td>
-                        <td class="{{item.td_class}}">{{item.estado}}</td>
-                        <td>{{item.cli_rut}}</td>
-                        <td>{{item.tipo}}</td>
-                        <td>{{item.raza}}</td>
-                        <td>{{item.a_nombre}}</td>
-                        <td>{{item.edad}}</td>
-                        <td>{{item.chip}}</td>
-                        <td>{{item.descripcion}}</td>
-                        <td>
+                        <td class="td">{{item.id}}</td>
+                        <td class="td">{{item.ingreso}}</td>
+                        <td class="{{item.td_class}} td">{{item.estado}}</td>
+                        <td class="td">{{item.cli_rut}}</td>
+                        <td class="td">{{item.tipo}}</td>
+                        <td class="td">{{item.raza}}</td>
+                        <td class="td">{{item.a_nombre}}</td>
+                        <td class="td">{{item.edad}}</td>
+                        <td class="td">{{item.chip}}</td>
+                        <td class="td">{{item.descripcion}}</td>
+                        <td class="td">
                             <button  class="btn btn-success show" id_animal="{{item.id}}"><i class="fa-solid fa-eye"></i> Ver</button>
-                        </td>
-                        <td>
                             <div class="btn-group" role="group">
                                 <a href="/mascotas/editar/{{item.id}}" class="btn btn-success action" action="¿Usted está seguro de editar?"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                                 <a href="/mascotas/eliminar/{{item.id}}" class="btn btn-danger action" action="¿Usted está seguro de eliminar?"><i class="fa-solid fa-trash"></i>Eliminar</a>
@@ -56,7 +54,7 @@
                         </td>
 
                     </tr>
-                    <tr style="text-align: center;">
+                    <tr class="th">
                         <td colspan="10">No existen datos ingresados.</td>
                     </tr>
                     </tbody>
