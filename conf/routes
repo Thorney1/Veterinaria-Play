@@ -11,8 +11,9 @@ GET     /homeVet                    controllers.HomeController.homeVeterinario()
 GET     /error                      controllers.HomeController.error()
 GET     /atenciones                 controllers.HomeController.atenciones()
 GET     /atenciones/ingreso         controllers.HomeController.atencionesAtender()
-GET     /mascotas                   controllers.HomeController.mascotas()
-GET     /mascotas/crear             controllers.HomeController.mascotasCrear()
+GET     /mascotas                   controllers.MascotasController.index()
+GET     /mascotas/crear             controllers.MascotasController.create(request: Request)
+POST     /mascotas/crear             controllers.MascotasController.store(request: Request)
 GET     /register                   controllers.HomeController.register()
 
 

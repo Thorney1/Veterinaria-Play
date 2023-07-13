@@ -1,3 +1,6 @@
+@import play.mvc.Http.Request
+@import viewmodels.IngresarMascotaViewModel
+@(form: Form[IngresarMascotaViewModel])(implicit request: Request)
 @main("Mascotas"){
 
 <body class="body-color">
@@ -17,13 +20,14 @@
 
                     <!-- de 12 columnas asignamos el uso de 4 -->
                 </div>
-                <form action="/mascotas/crear" method="POST">
+                    <form action="@routes.MascotasController.store" method="post" >
+                        @helper.CSRF.formField
                     <div class="card-body">
                         <div class="col-md-12 ">
 
                             <div class="col-sm-6">
                                 <label for="inputRut" class="form-label">Rut del cliente</label>
-                                <input type="text" name="cli_rut" class="form-control" placeholder="con guión y sin puntos">
+                                <input type="text" name="rutCliente" class="form-control" placeholder="con guión y sin puntos">
                                 <!--<button class="btn btn-outline-secondary" type="button" id="btnBuscarcliente">Buscar</button>-->
                             </div>
 
@@ -31,11 +35,11 @@
                             <div class="row gx-5 mb-3">
                                 <div class="col-sm-6">
                                     <label for="inputNombre" class="form-label">Nombre</label>
-                                    <input type="text" name='name' class="form-control" id="inputNombre" required>
+                                    <input type="text" name='nombreCliente' class="form-control" id="inputNombre" required>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="inputApellido" class="form-label">Apellido</label>
-                                    <input type="text" name='apellido' class="form-control" id="inputApellido" required>
+                                    <input type="text" name='apellidoCliente' class="form-control" id="inputApellido" required>
                                 </div>
                                 <div>
 
@@ -78,11 +82,11 @@
                                     <div class="row gx-5 mb-3">
                                         <div class="col-sm-4">
                                             <label for="inputTipoMascota" class="form-label">Nombre de la Mascota</label>
-                                            <input type="text" name='a_nombre' class="form-control" id="inputNombreMascota" required >
+                                            <input type="text" name='nombreMascota' class="form-control" id="inputNombreMascota" required >
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="inputTipoMascota" class="form-label">Tipo de Mascota</label>
-                                            <input type="text" name='tipo' class="form-control" placeholder="1:Gato  2:Perro" id="inputTipoMascota" required >
+                                            <input type="text" name='tipoMascota' class="form-control" placeholder="1:Gato  2:Perro" id="inputTipoMascota" required >
                                             <!--  <input type="checkbox" id="identificador" name="nombre" checked="checked"/>Texto del checkbox-->
                                         </div>
                                         <div class="col-sm-4">

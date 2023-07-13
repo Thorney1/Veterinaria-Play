@@ -1,3 +1,4 @@
+@(mascotas: Set[MascotasView_Result])
 @main("Mascotas"){
 
 <body class="body-color">
@@ -19,7 +20,7 @@
             <div class="card-body table-responsive p-0" display >
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
-                    <tr>
+                        <tr>
                         <th>#</th>
                         <th>Fecha ingreso</th>
                         <th>Estado</th>
@@ -34,17 +35,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>{{item.id}}</td>
-                        <td>{{item.ingreso}}</td>
-                        <td class="{{item.td_class}}">{{item.estado}}</td>
-                        <td>{{item.cli_rut}}</td>
-                        <td>{{item.tipo}}</td>
-                        <td>{{item.raza}}</td>
-                        <td>{{item.a_nombre}}</td>
-                        <td>{{item.edad}}</td>
-                        <td>{{item.chip}}</td>
-                        <td>{{item.descripcion}}</td>
+                    @for(mascota <- mascotas){
+                        <tr>
+                        <td>@mascota.id </td>
+                        <td>@mascota.fechaIngreso</td>
+                        <td>@mascota.estado</td>
+                        <td>@mascota.rutCliente</td>
+                        <td>@mascota.estado</td>
+                        <td>@mascota.raza </td>
+                        <td>@mascota.nombreAnimal </td>
+                        <td>@mascota.edad</td>
+                        <td>@mascota.chip </td>
+                        <td>@mascota.descripcion </td>
+                            }
                         <td>
                             <button  class="btn btn-success show" id_animal="{{item.id}}"><i class="fa-solid fa-eye"></i> Ver</button>
                         </td>

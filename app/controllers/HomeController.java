@@ -27,9 +27,7 @@ public class HomeController extends Controller {
         return ok(views.html.error.render());
     }
 
-    public Result mascotas() {
-        return ok(views.html.mascotas.render());
-    }
+
 
     public Result atenciones() {
         return ok(views.html.atenciones.render());
@@ -39,9 +37,7 @@ public class HomeController extends Controller {
         return ok(views.html.atencionesAtender.render());
     }
 
-    public Result mascotasCrear() {
-        return ok(views.html.mascotasCrear.render());
-    }
+
 
     public Result register() {
         return ok(views.html.register.render());
